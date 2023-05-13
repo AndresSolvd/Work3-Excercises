@@ -129,8 +129,8 @@ public class Main {
     //12 Java program to display all integers within the range 100-150 whose sum of digits is an even number
     public static void printSumDigitIntegerEvenFrom100To500() {
         System.out.println();
-        int sum = 0;
-        int j = 0;
+        int sum;
+        int j;
         for (int i = 100; i < 501; i++) {
             j = i;
             sum = 0;
@@ -176,7 +176,7 @@ public class Main {
     }
 
     //15 Java program to find the roots of a quadratic equation
-    public static double[] getRootsOfQuadraticEquation(double a, double b, double c) throws Exception {
+    public static double[] getRootsOfQuadraticEquation(double a, double b, double c) {
 
         double[] answer = new double[2];
         double calculate = 0;
@@ -215,7 +215,7 @@ public class Main {
     public static BigInteger getFactorial(long number, BigInteger counter) {
         if (number != 1) {
             counter = counter.multiply(BigInteger.valueOf(number));
-            number = number -1;
+            number = number - 1;
             return getFactorial(number, counter);
         }
         return counter;
@@ -245,7 +245,7 @@ public class Main {
         System.out.println(getPrimesFrom1ToN(101).toString());
         System.out.println("the roots are: " + Arrays.toString(getRootsOfQuadraticEquation(10, 20, 15)));
         getNumbersWithRecursion(10);
-        System.out.println(getFactorial(140,BigInteger.valueOf(1)));
+        System.out.println(getFactorial(140, BigInteger.valueOf(1)));
     }
 }
 

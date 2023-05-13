@@ -45,7 +45,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(checkEvenOrOdd(214748364899L));
+        System.out.println("The number is: " + checkEvenOrOdd(214748364899L));
         System.out.println(calculateFahrenheitFromCelsius(30) + " Fahrenheit");
         System.out.println("The area is: " + calculateAreaTriangle(4, 3, 4));
         System.out.println("The average is: " + average(new int[]{2, 3, 4, 5, 1, 3, 10}));
@@ -99,6 +99,4 @@ public class Main {
 • Filling an Array Using For Loops in Java (enter type (1 dimension array or 2D array) and size from the keyboard too)
 • Java Program to Find the Largest and Smallest Numbers From an Array of Random Numbers
 • https://code-exercises.com/programming/medium/
-
-From <https://app.slack.com/client/T04098ULGHL/D052N6HB1T5>
 */

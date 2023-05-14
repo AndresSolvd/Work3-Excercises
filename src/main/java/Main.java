@@ -432,8 +432,8 @@ public class Main {
 
         int[] list = new int[listLength];
         int[] result = new int[2];
-        int smallest = 0;
-        int largest = 0;
+        int smallest;
+        int largest;
 
         for (int i = 0; i < listLength; i++) {
             list[i] = (int) (Math.random() * 10);
@@ -455,8 +455,8 @@ public class Main {
     // 39 Filling an Array Using For Loops in Java (enter type (1 dimension array or 2D array) and size from the keyboard too)
     public static void createAndFillArrays() {
 
-        int xSize = 0;
-        int ySize = 0;
+        int xSize;
+        int ySize;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter dimension (1 or 2)");

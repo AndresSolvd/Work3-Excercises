@@ -302,7 +302,7 @@ public class Main {
 
 
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         System.out.println("The number is: " + checkEvenOrOdd(214748364899L));
         System.out.println(calculateFahrenheitFromCelsius(30) + " Fahrenheit");
@@ -322,7 +322,7 @@ public class Main {
         printMultiplesOf3from10to50();
         printSumDigitIntegerEvenFrom100To500();
         isPrime(101);
-        System.out.println(getPrimesFrom1ToN(101).toString());
+        System.out.println(getPrimesFrom1ToN(101));
         System.out.println("the roots are: " + Arrays.toString(getRootsOfQuadraticEquation(10, 20, 15)));
         getNumbersWithRecursion(10);
         System.out.println(getFactorial(140, BigInteger.valueOf(1)));
@@ -331,7 +331,7 @@ public class Main {
         System.out.println("There are " + countOddsInArray(new int[]{1,2,3,4,5,6,7,8,9})+ " odd number(s) in the array");
         System.out.println("The largest number in the array is: " + largestNumberInArray(new int[]{1,2,3,4,5,6}));
         System.out.println(Arrays.toString(insertNumberInArrayPosition(2, 0, new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9})));
-        insertNumberInArrayListPosition(2, 0, new ArrayList<Integer>());
+        insertNumberInArrayListPosition(2, 0, new ArrayList<>());
         System.out.println(Arrays.toString(deleteElementInArrayByIndex(2, new int[]{1, 2, 3, 4, 5, 6})));
         System.out.println("It is " + checkPalindrome("racecar") + " that is a palindrome");
 

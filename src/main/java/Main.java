@@ -170,7 +170,6 @@ public class Main {
                     primes.add(i);
                 }
             }
-
         }
         return primes;
     }
@@ -257,7 +256,7 @@ public class Main {
     public static float largestNumberInArray(int[] numbers) {
         int current = 0;
         for (int number : numbers) {
-            if(number > current) {
+            if (number > current) {
                 current = number;
             }
         }
@@ -266,7 +265,7 @@ public class Main {
 
     //22 Java program to insert a number to any position in an array
     public static int[] insertNumberInArrayPosition(int number, int position, int[] arraylist) {
-        for (int i = 0; i < arraylist.length; i++){
+        for (int i = 0; i < arraylist.length; i++) {
             if (i == position) {
                 arraylist[i] = number;
                 break;
@@ -282,16 +281,16 @@ public class Main {
 
     //23 Java program to delete an element from an array by index
     public static int[] deleteElementInArrayByIndex(int index, int[] array) {
-        for (int i = index; i < array.length -1; i ++) {
+        for (int i = index; i < array.length - 1; i++) {
             array[i] = array[i + 1];
         }
-        array[array.length -1] = 0;
+        array[array.length - 1] = 0;
         return array;
     }
 
     //24 Java program to check whether a string is a palindrome or not
     public static Boolean checkPalindrome(String input) {
-        for (int i = 0, j = input.length() -1; i < j; i++,j--) {
+        for (int i = 0, j = input.length() - 1; i < j; i++, j--) {
             if (input.charAt(i) != input.charAt(j)) {
                 return false;
             }
@@ -299,7 +298,55 @@ public class Main {
         return true;
     }
 
+    //25 Java program to implement matrix addition
+    public static int[] getMatrixAddition(int[] a, int[] b) {
 
+        if (a.length != b.length) {
+            System.out.println("matrix has not the same length");
+            return null;
+        }
+        int[] additionMatrix = new int[a.length];
+        for (int i = 0; i < a.length; i++) {
+            additionMatrix[i] = a[i] + b[i];
+        }
+        return additionMatrix;
+    }
+
+    //26 Java program to implement matrix multiplication
+    public static int[] getMatrixMultiplication(int[] a, int[] b) {
+
+        if (a.length != b.length) {
+            System.out.println("matrix has not the same length");
+            return null;
+        }
+        int[] productMatrix = new int[a.length];
+        for (int i = 0; i < a.length; i++) {
+            productMatrix[i] = a[i] * b[i];
+        }
+        return productMatrix;
+    }
+
+    //27 Java program to check leap year
+    public static boolean checkLeapYear(int year) {
+        return year % 4 == 0 && year % 100 != 0 | year % 400 == 0;
+    }
+
+    //28 Java program to find the Nth term in a Fibonacci series using recursion
+    public static int getNthTermOnFibonacci(int nth, int current, int previous) {
+        //F(n) = F(n-1) + F(n-2)
+        nth = nth - 1;
+        if (nth == 0) {
+            return current;
+        }
+
+        int newest = current + previous;
+        previous = current;
+        current = newest;
+        return getNthTermOnFibonacci(nth, current, previous);
+    }
+    public static int getNthTermOnFibonacci(int nth) {
+        return getNthTermOnFibonacci(nth, 1, 0);
+    }
 
 
     public static void main(String[] args) {
@@ -327,13 +374,17 @@ public class Main {
         getNumbersWithRecursion(10);
         System.out.println(getFactorial(140, BigInteger.valueOf(1)));
         arraySum(new float[]{1, 2, 3, 4, 5, 6});
-        System.out.println(linearSearch("cuatro", new String[]{"uno","dos","tres","cuatro","cinco"}));
-        System.out.println("There are " + countOddsInArray(new int[]{1,2,3,4,5,6,7,8,9})+ " odd number(s) in the array");
-        System.out.println("The largest number in the array is: " + largestNumberInArray(new int[]{1,2,3,4,5,6}));
+        System.out.println(linearSearch("cuatro", new String[]{"uno", "dos", "tres", "cuatro", "cinco"}));
+        System.out.println("There are " + countOddsInArray(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}) + " odd number(s) in the array");
+        System.out.println("The largest number in the array is: " + largestNumberInArray(new int[]{1, 2, 3, 4, 5, 6}));
         System.out.println(Arrays.toString(insertNumberInArrayPosition(2, 0, new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9})));
         insertNumberInArrayListPosition(2, 0, new ArrayList<>());
         System.out.println(Arrays.toString(deleteElementInArrayByIndex(2, new int[]{1, 2, 3, 4, 5, 6})));
         System.out.println("It is " + checkPalindrome("racecar") + " that is a palindrome");
+        System.out.println("Addition matrix result: " + Arrays.toString(getMatrixAddition(new int[]{1, 2, 3, 4, 5}, new int[]{9, 8, 7, 6, 5})));
+        System.out.println("Addition matrix result: " + Arrays.toString(getMatrixMultiplication(new int[]{1, 2, 3, 4, 5}, new int[]{9, 8, 7, 6, 5})));
+        System.out.println("It is " + checkLeapYear(1900) + " that is a leap year");
+        System.out.println("The fibonacci nth is: " + getNthTermOnFibonacci(6));
 
 
     }
@@ -342,10 +393,10 @@ public class Main {
 
 /*•
 
-• Java program to implement matrix addition
-• Java program to implement matrix multiplication
-• Java program to check leap year
-• Java program to find the Nth term in a Fibonacci series using recursion
+•
+•
+•
+•
 • Java program to print Fibonacci series using iteration
 • Java program to implement a calculator to do basic operations
 • Java Program to Find Your Weight on Mars

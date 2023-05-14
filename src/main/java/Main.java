@@ -221,6 +221,86 @@ public class Main {
         return counter;
     }
 
+    //18 Java program to display the sum of n numbers using an array
+    public static void arraySum(float[] numbers) {
+        float sum = 0;
+
+        for (float number : numbers) {
+            sum = sum + number;
+        }
+        System.out.println(sum);
+    }
+
+    //19 Java program to implement linear search
+    public static String linearSearch(String search, String[] things) {
+        for (String item : things) {
+            if (search.equals(item)) {
+                return "Found ";
+            }
+        }
+        return "Not found";
+    }
+
+
+    //20 Java program to find the number of odd numbers in an array
+    public static int countOddsInArray(int[] numbers) {
+        int counter = 0;
+        for (int number : numbers) {
+            if (number % 2 != 0) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    //21 Java program to find the largest number in an array without using built-in functions
+    public static float largestNumberInArray(int[] numbers) {
+        int current = 0;
+        for (int number : numbers) {
+            if(number > current) {
+                current = number;
+            }
+        }
+        return current;
+    }
+
+    //22 Java program to insert a number to any position in an array
+    public static int[] insertNumberInArrayPosition(int number, int position, int[] arraylist) {
+        for (int i = 0; i < arraylist.length; i++){
+            if (i == position) {
+                arraylist[i] = number;
+                break;
+            }
+        }
+        return arraylist;
+    }
+
+    public static void insertNumberInArrayListPosition(int number, int position, ArrayList<Integer> arraylist) {
+        arraylist.add(position, number);
+        System.out.println(number + " Was added in the index " + arraylist.indexOf(number));
+    }
+
+    //23 Java program to delete an element from an array by index
+    public static int[] deleteElementInArrayByIndex(int index, int[] array) {
+        for (int i = index; i < array.length -1; i ++) {
+            array[i] = array[i + 1];
+        }
+        array[array.length -1] = 0;
+        return array;
+    }
+
+    //24 Java program to check whether a string is a palindrome or not
+    public static Boolean checkPalindrome(String input) {
+        for (int i = 0, j = input.length() -1; i < j; i++,j--) {
+            if (input.charAt(i) != input.charAt(j)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
 
     public static void main(String[] args) throws Exception {
 
@@ -246,24 +326,22 @@ public class Main {
         System.out.println("the roots are: " + Arrays.toString(getRootsOfQuadraticEquation(10, 20, 15)));
         getNumbersWithRecursion(10);
         System.out.println(getFactorial(140, BigInteger.valueOf(1)));
+        arraySum(new float[]{1, 2, 3, 4, 5, 6});
+        System.out.println(linearSearch("cuatro", new String[]{"uno","dos","tres","cuatro","cinco"}));
+        System.out.println("There are " + countOddsInArray(new int[]{1,2,3,4,5,6,7,8,9})+ " odd number(s) in the array");
+        System.out.println("The largest number in the array is: " + largestNumberInArray(new int[]{1,2,3,4,5,6}));
+        System.out.println(Arrays.toString(insertNumberInArrayPosition(2, 0, new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9})));
+        insertNumberInArrayListPosition(2, 0, new ArrayList<Integer>());
+        System.out.println(Arrays.toString(deleteElementInArrayByIndex(2, new int[]{1, 2, 3, 4, 5, 6})));
+        System.out.println("It is " + checkPalindrome("racecar") + " that is a palindrome");
+
+
     }
 }
 
 
 /*•
 
-•
-•
-•
-•
-• Java program to display the sum of n numbers using an array
-• Java program to implement linear search
-• Java program to implement binary search
-• Java program to find the number of odd numbers in an array
-• Java program to find the largest number in an array without using built-in functions
-• Java program to insert a number to any position in an array
-• Java program to delete an element from an array by index
-• Java program to check whether a string is a palindrome or not
 • Java program to implement matrix addition
 • Java program to implement matrix multiplication
 • Java program to check leap year

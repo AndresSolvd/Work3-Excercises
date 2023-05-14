@@ -432,8 +432,6 @@ public class Main {
 
         int[] list = new int[listLength];
         int[] result = new int[2];
-        int smallest;
-        int largest;
 
         for (int i = 0; i < listLength; i++) {
             list[i] = (int) (Math.random() * 10);
@@ -482,6 +480,7 @@ public class Main {
                 System.out.println("Input 1 for 1D or 2 for 2D");
         }
     }
+
     //1D Array
     public static int[] createAndFillArrays(int size) {
         int[] arr = new int[size];
@@ -490,6 +489,7 @@ public class Main {
         }
         return arr;
     }
+
     //2D Array
     public static int[][] createAndFillArrays(int xSize, int ySize) {
         int[][] arr = new int[xSize][ySize];
@@ -502,8 +502,8 @@ public class Main {
     }
 
     //40 Java Program to Find the Largest and Smallest Numbers From an Array of Random Numbers
-    public static int[] findLargestAndSmallestFromArray(int length){
-       return findLargestAndSmallestOfACreatedListOfRandomNumbers(length);
+    public static int[] findLargestAndSmallestFromArray(int length) {
+        return findLargestAndSmallestOfACreatedListOfRandomNumbers(length);
     }
 
     public static void main(String[] args) {

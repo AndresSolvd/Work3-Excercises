@@ -344,10 +344,167 @@ public class Main {
         current = newest;
         return getNthTermOnFibonacci(nth, current, previous);
     }
+
     public static int getNthTermOnFibonacci(int nth) {
         return getNthTermOnFibonacci(nth, 1, 0);
     }
 
+    //29 Java program to print Fibonacci series using iteration
+    public static int getFibonacciByIteration(int index) {
+        //F(n) = F(n-1) + F(n-2)
+        int current = 0;
+        int previous = 1;
+        int newest = 0;
+
+        for (int i = index; i > 0; i--) {
+            newest = current + previous;
+            previous = current;
+            current = newest;
+        }
+        return newest;
+    }
+
+    //30 Java program to implement a calculator to do basic operations
+    public static double calculator(double a, char operation, double b) {
+
+        double result = 0;
+
+        switch (operation) {
+            case '+':
+                result = a + b;
+                break;
+            case '-':
+                result = a - b;
+                break;
+            case '*':
+                result = a * b;
+                break;
+            case '/':
+                result = a / b;
+                break;
+            default:
+                System.out.println("invalid operation accepted values are: + - * /");
+        }
+        return result;
+    }
+
+    //31 Java Program to Find Your Weight on Mars
+    public static double weightMars(double weight) {
+        return weight * 3.71 / 9.81;
+    }
+
+    //32 Java Program to Check Whether the Generated Random Number Is Even or Odd
+    public static String checkOddOrEven(int randomNumber) {
+        if (randomNumber % 2 == 0) {
+            return "even";
+        } else {
+            return "odd";
+        }
+    }
+
+    //33 Java Program to Find the Number of Containers You Need
+
+
+    //34 Java Program to Calculate Taxes
+    public static double checkTaxesToPay(double amount) {
+        return amount * 0.12;
+    }
+
+    //35 Calculate BMI Using Java
+    public static double getBMI(double height, double weight) {
+        return weight / Math.pow(height, 2);
+    }
+
+    //36 Java Program to Find the Sum of Even Numbers in a range
+    public static int sumOnlyEvens(int[] numbers) {
+
+        int sum = 0;
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                sum = sum + number;
+            }
+        }
+        return sum;
+    }
+
+    //37 Java Program to Find the Largest and Smallest Numbers From Random Numbers
+    public static int[] findLargestAndSmallestOfACreatedListOfRandomNumbers(int listLength) {
+
+        int[] list = new int[listLength];
+        int[] result = new int[2];
+        int smallest = 0;
+        int largest = 0;
+
+        for (int i = 0; i < listLength; i++) {
+            list[i] = (int) (Math.random() * 10);
+            if (i != 0 && list[i] < list[i - 1]) {
+                result[0] = list[i]; //smallest
+            } else {
+                result[1] = list[i]; //largest
+            }
+        }
+        System.out.println("Smallest Number is: " + result[0] + " | Largest Number is: " + result[1]);
+        return result;
+    }
+
+    //38 Java Program to Calculate the Area of a Rectangle
+    public static double areaRectangle(double a, double b) {
+        return a * b;
+    }
+
+    // 39 Filling an Array Using For Loops in Java (enter type (1 dimension array or 2D array) and size from the keyboard too)
+    public static void createAndFillArrays() {
+
+        int xSize = 0;
+        int ySize = 0;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter dimension (1 or 2)");
+        int dimension = scanner.nextInt();
+
+
+        switch (dimension) {
+            case 1:
+                System.out.println("Enter Length");
+                xSize = scanner.nextInt();
+                System.out.println(Arrays.toString(createAndFillArrays(xSize)));
+                break;
+
+            case 2:
+                System.out.println("Enter Length(x)");
+                xSize = scanner.nextInt();
+                System.out.println("Enter Height(y)");
+                ySize = scanner.nextInt();
+                System.out.println(Arrays.deepToString(createAndFillArrays(xSize, ySize)));
+                break;
+
+            default:
+                System.out.println("Input 1 for 1D or 2 for 2D");
+        }
+    }
+    //1D Array
+    public static int[] createAndFillArrays(int size) {
+        int[] arr = new int[size];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * 10);
+        }
+        return arr;
+    }
+    //2D Array
+    public static int[][] createAndFillArrays(int xSize, int ySize) {
+        int[][] arr = new int[xSize][ySize];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = (int) (Math.random() * 10);
+            }
+        }
+        return arr;
+    }
+
+    //40 Java Program to Find the Largest and Smallest Numbers From an Array of Random Numbers
+    public static int[] findLargestAndSmallestFromArray(int length){
+       return findLargestAndSmallestOfACreatedListOfRandomNumbers(length);
+    }
 
     public static void main(String[] args) {
 
@@ -384,7 +541,18 @@ public class Main {
         System.out.println("Addition matrix result: " + Arrays.toString(getMatrixAddition(new int[]{1, 2, 3, 4, 5}, new int[]{9, 8, 7, 6, 5})));
         System.out.println("Addition matrix result: " + Arrays.toString(getMatrixMultiplication(new int[]{1, 2, 3, 4, 5}, new int[]{9, 8, 7, 6, 5})));
         System.out.println("It is " + checkLeapYear(1900) + " that is a leap year");
-        System.out.println("The fibonacci nth is: " + getNthTermOnFibonacci(6));
+        System.out.println("The fibonacci by recursive method is: " + getNthTermOnFibonacci(20));
+        System.out.println("The fibonacci by iteration method is: " + getFibonacciByIteration(20));
+        System.out.println("Calculator answer: " + calculator(1, '/', 2));
+        System.out.println("My weight in mars is: " + weightMars(190));
+        System.out.println("Random number is: " + checkOddOrEven((int) (Math.random() * 10)));
+        System.out.println("You need to pay " + checkTaxesToPay(100) + " in taxes");
+        System.out.println("BMI is: " + getBMI(1.87, 86));
+        System.out.println("The sum of only the even numbers in the range is: " + sumOnlyEvens(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
+        findLargestAndSmallestOfACreatedListOfRandomNumbers(6);
+        System.out.println("Rectangle area: " + areaRectangle(5, 10));
+        createAndFillArrays();
+        System.out.println("The answer is: " + Arrays.toString(findLargestAndSmallestFromArray(7)));
 
 
     }
@@ -396,18 +564,5 @@ public class Main {
 •
 •
 •
-•
-• Java program to print Fibonacci series using iteration
-• Java program to implement a calculator to do basic operations
-• Java Program to Find Your Weight on Mars
-• Java Program to Check Whether the Generated Random Number Is Even or Odd
-• Java Program to Find the Number of Containers You Need
-• Java Program to Calculate Taxes
-• Calculate BMI Using Java
-• Java Program to Find the Sum of Even Numbers in a range
-• Java Program to Find the Largest and Smallest Numbers From Random Numbers
-• Java Program to Calculate the Area of a Rectangle
-• Filling an Array Using For Loops in Java (enter type (1 dimension array or 2D array) and size from the keyboard too)
-• Java Program to Find the Largest and Smallest Numbers From an Array of Random Numbers
 • https://code-exercises.com/programming/medium/
 */

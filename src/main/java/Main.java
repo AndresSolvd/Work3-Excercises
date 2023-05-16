@@ -240,7 +240,6 @@ public class Main {
         return "Not found";
     }
 
-
     //20 Java program to find the number of odd numbers in an array
     public static int countOddsInArray(int[] numbers) {
         int counter = 0;
@@ -402,7 +401,52 @@ public class Main {
         }
     }
 
-    //33 Java Program to Find the Number of Containers You Need
+    //33 Java Program to Find the Number of Containers You Need. Given a number
+    // N and a time X unit, the task is to find the number of containers that are
+    // filled completely in X unit if containers are arranged in pyramid fashion as shown below.
+    public static int findContainersNumber(int nLines, int xTime) {
+        // time, container, row
+        // row 1 = time/container = 1/1
+        // row 2 = time/container = 1/2
+        // row 3 = time/container = 1/3
+        // row 4 = time/container = 1/4
+        // Time / Row = Container
+        return xTime / nLines; // as the output is int, it will remove any decimals
+    }
+
+
+    public static int findNumberOfContainersPerTimes(int numberOfContainers, int numberOfTimes) {
+
+        int totalContainersAtCurrentRow = 0;
+        int previousTotalContainersAtCurrentRow = 0;
+
+        if (numberOfContainers < numberOfTimes) {
+            return numberOfContainers;
+        }
+
+        // The for Loop will count the pyramid's height by number of rows (i).
+        for (int i = 1; i <= numberOfContainers; i++) {
+
+            previousTotalContainersAtCurrentRow = totalContainersAtCurrentRow;
+            totalContainersAtCurrentRow = totalContainersAtCurrentRow + i;
+
+            // If totalContainersAtCurrentRow equals numberOfTimes
+            // means the edge of full cups has been reach at that row
+            if (numberOfTimes == totalContainersAtCurrentRow) {
+
+                return totalContainersAtCurrentRow;
+            }
+
+            // If totalContainersAtCurrentRow exceeds numberOfTimes
+            // means the edge of full cups has been reach at the previous row
+            if (numberOfTimes < totalContainersAtCurrentRow) {
+
+                return previousTotalContainersAtCurrentRow;
+            }
+        }
+
+        return -1;
+    }
 
 
     //34 Java Program to Calculate Taxes
@@ -460,7 +504,6 @@ public class Main {
         System.out.println("Enter dimension (1 or 2)");
         int dimension = scanner.nextInt();
 
-
         switch (dimension) {
             case 1:
                 System.out.println("Enter Length");
@@ -479,6 +522,8 @@ public class Main {
             default:
                 System.out.println("Input 1 for 1D or 2 for 2D");
         }
+
+        scanner.close();
     }
 
     //1D Array
@@ -512,11 +557,9 @@ public class Main {
         System.out.println(calculateFahrenheitFromCelsius(30) + " Fahrenheit");
         System.out.println("The area is: " + calculateAreaTriangle(4, 3, 4));
         System.out.println("The average is: " + average(new int[]{2, 3, 4, 5, 1, 3, 10}));
-        System.out.println("The product of this set of Real Numbers is: " +
-                calculateRealNumberProduct(new double[]{Math.PI, 23, 44, Math.E, 34.23}));
+        System.out.println("The product of this set of Real Numbers is: " + calculateRealNumberProduct(new double[]{Math.PI, 23, 44, Math.E, 34.23}));
         Map<String, Double> results = getCircumferenceArea(5);
-        System.out.println("The circumference is: " + results.get("Circumference")
-                + ". The area is: " + results.get("Area"));
+        System.out.println("The circumference is: " + results.get("Circumference") + ". The area is: " + results.get("Area"));
         System.out.println(isMultipleOfFive(1235));
         System.out.println(isMultipleOfFiveAndSeven(35));
         System.out.println(averageFiveNumbers(new double[]{1, 2, 3, 4, 5}));
@@ -546,6 +589,7 @@ public class Main {
         System.out.println("Calculator answer: " + calculator(1, '/', 2));
         System.out.println("My weight in mars is: " + weightMars(190));
         System.out.println("Random number is: " + checkOddOrEven((int) (Math.random() * 10)));
+        System.out.println("The number of full filled containers at given time: " + findNumberOfContainersPerTimes(3, 7));
         System.out.println("You need to pay " + checkTaxesToPay(100) + " in taxes");
         System.out.println("BMI is: " + getBMI(1.87, 86));
         System.out.println("The sum of only the even numbers in the range is: " + sumOnlyEvens(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));

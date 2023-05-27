@@ -3,7 +3,7 @@ import java.util.*;
 
 import static java.lang.Math.sqrt;
 
-public class Main {
+public class Exercises40 {
 
     //1 Java program to check whether the given number is even or odd
     public static String checkEvenOrOdd(long number) {

@@ -107,7 +107,7 @@ public class Exercises40 {
         return Math.pow(product, 1.0 / numbers.length);
     }
 
-    //10 Java program to find the sum of the digits of an integer using a while loop
+    //12 Java program to find the sum of the digits of an integer using a while loop
     public static int digitsSum(int number) {
         int sum = 0;
         while (number != 0) {
@@ -117,7 +117,7 @@ public class Exercises40 {
         return sum;
     }
 
-    //11 Java program to display all the multiples of 3 within the range 10 to 50
+    //13 Java program to display all the multiples of 3 within the range 10 to 50
     public static void printMultiplesOf3from10to50() {
         for (int i = 10; i < 51; i++) {
             if (i % 3 == 0) {
@@ -126,7 +126,7 @@ public class Exercises40 {
         }
     }
 
-    //12 Java program to display all integers within the range 100-150 whose sum of digits is an even number
+    //14 Java program to display all integers within the range 100-150 whose sum of digits is an even number
     public static void printSumDigitIntegerEvenFrom100To500() {
         System.out.println();
         int sum;
@@ -144,7 +144,7 @@ public class Exercises40 {
         }
     }
 
-    //13 Java program to check whether the given integer is a prime number or not
+    //15 Java program to check whether the given integer is a prime number or not
     public static void isPrime(int number) {
         for (int i = 2; i < number; i++) {
             if (number % i == 0) {
@@ -155,7 +155,7 @@ public class Exercises40 {
         System.out.println("\nthis is a prime number");
     }
 
-    //14 Java program to generate the prime numbers from 1 to N
+    //16 Java program to generate the prime numbers from 1 to N
     public static List<Integer> getPrimesFrom1ToN(int n) {
 
         List<Integer> primes = new ArrayList<>();
@@ -174,7 +174,7 @@ public class Exercises40 {
         return primes;
     }
 
-    //15 Java program to find the roots of a quadratic equation
+    //17 Java program to find the roots of a quadratic equation
     public static double[] getRootsOfQuadraticEquation(double a, double b, double c) {
 
         double[] answer = new double[2];
@@ -199,7 +199,7 @@ public class Exercises40 {
         return answer;
     }
 
-    //16 Java program to print the numbers from a given number n till 0 using recursion
+    //18 Java program to print the numbers from a given number n till 0 using recursion
     public static void getNumbersWithRecursion(int number) {
         if (number != 0) {
             System.out.print(number);
@@ -210,7 +210,7 @@ public class Exercises40 {
         }
     }
 
-    //17 Java program to find the factorial of a number using recursion
+    //19 Java program to find the factorial of a number using recursion
     public static BigInteger getFactorial(long number, BigInteger counter) {
         if (number != 1) {
             counter = counter.multiply(BigInteger.valueOf(number));
@@ -220,7 +220,7 @@ public class Exercises40 {
         return counter;
     }
 
-    //18 Java program to display the sum of n numbers using an array
+    //20 Java program to display the sum of n numbers using an array
     public static void arraySum(float[] numbers) {
         float sum = 0;
 
@@ -230,7 +230,7 @@ public class Exercises40 {
         System.out.println(sum);
     }
 
-    //19 Java program to implement linear search
+    //21 Java program to implement linear search
     public static String linearSearch(String search, String[] things) {
         for (String item : things) {
             if (search.equals(item)) {
@@ -240,7 +240,7 @@ public class Exercises40 {
         return "Not found";
     }
 
-    //20 Java program to find the number of odd numbers in an array
+    //22 Java program to find the number of odd numbers in an array
     public static int countOddsInArray(int[] numbers) {
         int counter = 0;
         for (int number : numbers) {
@@ -251,7 +251,7 @@ public class Exercises40 {
         return counter;
     }
 
-    //21 Java program to find the largest number in an array without using built-in functions
+    //23 Java program to find the largest number in an array without using built-in functions
     public static float largestNumberInArray(int[] numbers) {
         int current = 0;
         for (int number : numbers) {
@@ -262,7 +262,7 @@ public class Exercises40 {
         return current;
     }
 
-    //22 Java program to insert a number to any position in an array
+    //24 Java program to insert a number to any position in an array
     public static int[] insertNumberInArrayPosition(int number, int position, int[] arraylist) {
         for (int i = 0; i < arraylist.length; i++) {
             if (i == position) {
@@ -278,7 +278,7 @@ public class Exercises40 {
         System.out.println(number + " Was added in the index " + arraylist.indexOf(number));
     }
 
-    //23 Java program to delete an element from an array by index
+    //25 Java program to delete an element from an array by index
     public static int[] deleteElementInArrayByIndex(int index, int[] array) {
         for (int i = index; i < array.length - 1; i++) {
             array[i] = array[i + 1];
@@ -287,7 +287,7 @@ public class Exercises40 {
         return array;
     }
 
-    //24 Java program to check whether a string is a palindrome or not
+    //26 Java program to check whether a string is a palindrome or not
     public static Boolean checkPalindrome(String input) {
         for (int i = 0, j = input.length() - 1; i < j; i++, j--) {
             if (input.charAt(i) != input.charAt(j)) {
@@ -297,7 +297,7 @@ public class Exercises40 {
         return true;
     }
 
-    //25 Java program to implement matrix addition
+    //27 Java program to implement matrix addition
     public static int[] getMatrixAddition(int[] a, int[] b) {
 
         if (a.length != b.length) {
@@ -311,7 +311,7 @@ public class Exercises40 {
         return additionMatrix;
     }
 
-    //26 Java program to implement matrix multiplication
+    //28 Java program to implement matrix multiplication
     public static int[] getMatrixMultiplication(int[] a, int[] b) {
 
         if (a.length != b.length) {
@@ -325,12 +325,12 @@ public class Exercises40 {
         return productMatrix;
     }
 
-    //27 Java program to check leap year
+    //29 Java program to check leap year
     public static boolean checkLeapYear(int year) {
         return year % 4 == 0 && year % 100 != 0 | year % 400 == 0;
     }
 
-    //28 Java program to find the Nth term in a Fibonacci series using recursion
+    //30 Java program to find the Nth term in a Fibonacci series using recursion
     public static int getNthTermOnFibonacci(int nth, int current, int previous) {
         //F(n) = F(n-1) + F(n-2)
         nth = nth - 1;
@@ -348,7 +348,7 @@ public class Exercises40 {
         return getNthTermOnFibonacci(nth, 1, 0);
     }
 
-    //29 Java program to print Fibonacci series using iteration
+    //31 Java program to print Fibonacci series using iteration
     public static int getFibonacciByIteration(int index) {
         //F(n) = F(n-1) + F(n-2)
         int current = 0;
@@ -363,7 +363,7 @@ public class Exercises40 {
         return newest;
     }
 
-    //30 Java program to implement a calculator to do basic operations
+    //32 Java program to implement a calculator to do basic operations
     public static double calculator(double a, char operation, double b) {
 
         double result = 0;
@@ -387,12 +387,12 @@ public class Exercises40 {
         return result;
     }
 
-    //31 Java Program to Find Your Weight on Mars
+    //33 Java Program to Find Your Weight on Mars
     public static double weightMars(double weight) {
         return weight * 3.71 / 9.81;
     }
 
-    //32 Java Program to Check Whether the Generated Random Number Is Even or Odd
+    //34 Java Program to Check Whether the Generated Random Number Is Even or Odd
     public static String checkOddOrEven(int randomNumber) {
         if (randomNumber % 2 == 0) {
             return "even";
@@ -401,7 +401,7 @@ public class Exercises40 {
         }
     }
 
-    //33 Java Program to Find the Number of Containers You Need. Given a number
+    //35 Java Program to Find the Number of Containers You Need. Given a number
     // N and a time X unit, the task is to find the number of containers that are
     // filled completely in X unit if containers are arranged in pyramid fashion as shown below.
     public static int findContainersNumber(int nLines, int xTime) {
@@ -449,17 +449,17 @@ public class Exercises40 {
     }
 
 
-    //34 Java Program to Calculate Taxes
+    //36 Java Program to Calculate Taxes
     public static double checkTaxesToPay(double amount) {
         return amount * 0.12;
     }
 
-    //35 Calculate BMI Using Java
+    //37 Calculate BMI Using Java
     public static double getBMI(double height, double weight) {
         return weight / Math.pow(height, 2);
     }
 
-    //36 Java Program to Find the Sum of Even Numbers in a range
+    //38 Java Program to Find the Sum of Even Numbers in a range
     public static int sumOnlyEvens(int[] numbers) {
 
         int sum = 0;
@@ -471,7 +471,7 @@ public class Exercises40 {
         return sum;
     }
 
-    //37 Java Program to Find the Largest and Smallest Numbers From Random Numbers
+    //39 Java Program to Find the Largest and Smallest Numbers From Random Numbers
     public static int[] findLargestAndSmallestOfACreatedListOfRandomNumbers(int listLength) {
 
         int[] list = new int[listLength];
@@ -489,12 +489,12 @@ public class Exercises40 {
         return result;
     }
 
-    //38 Java Program to Calculate the Area of a Rectangle
+    //40 Java Program to Calculate the Area of a Rectangle
     public static double areaRectangle(double a, double b) {
         return a * b;
     }
 
-    // 39 Filling an Array Using For Loops in Java (enter type (1 dimension array or 2D array) and size from the keyboard too)
+    //41 Filling an Array Using For Loops in Java (enter type (1 dimension array or 2D array) and size from the keyboard too)
     public static void createAndFillArrays() {
 
         int xSize;
@@ -546,7 +546,7 @@ public class Exercises40 {
         return arr;
     }
 
-    //40 Java Program to Find the Largest and Smallest Numbers From an Array of Random Numbers
+    //42 Java Program to Find the Largest and Smallest Numbers From an Array of Random Numbers
     public static int[] findLargestAndSmallestFromArray(int length) {
         return findLargestAndSmallestOfACreatedListOfRandomNumbers(length);
     }
